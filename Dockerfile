@@ -24,6 +24,7 @@ RUN pip install optimum
 RUN pip install dash
 RUN pip install ipykernel
 RUN pip install -U pip setuptools wheel
+RUN pip install wandb
 #RUN pip install -U 'spacy[cuda-autodetect]'
 #RUN python -m spacy download en_core_web_sm
 #RUN pip install fastapi

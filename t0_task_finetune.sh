@@ -26,7 +26,7 @@ run_task() {
     echo "Fine-Tuning for task : $1" >>$LOG_FILE
 
     accelerate launch --config_file config.yaml instruction_tuner.py \
-        --dataset_name_or_path $DATA_NAME_OR_PATH \
+        --dataset_name_or_path $2 \
         --model_name_or_path $MODEL_NAME_OR_PATH \
         --load_data_from_disk \
         --hf_access_token $HUB_TOKEN \
@@ -44,7 +44,7 @@ run_task() {
         --lr_scheduler_type cosine \
         --with_tracking \
         --report_to wandb \
-        --output_dir $OUTPUT_DIR \
+        --output_dir $3 \
         --hub_token $HUB_TOKEN \
         --private_repo
 
