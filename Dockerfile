@@ -39,19 +39,13 @@ RUN git clone https://github.com/decile-team/submodlib.git && cd submodlib && pi
 RUN rm -rf submodlib
 
 COPY ./instruction_tuner.py instruction_tuner.py
-COPY ./instruction_tuner.sh instruction_tuner.sh
-RUN chmod +x instruction_tuner.sh
+COPY t0_task_finetune.sh t0_task_finetune.sh
+RUN chmod +x t0_task_finetune.sh
+
 COPY ./config.yaml config.yaml
-COPY ./data_generation_scripts/get_SMART_mixture.py get_SMART_mixture.py
-COPY ./data_generation_scripts/get_SMART_mixture.sh get_SMART_mixture.sh
 
 RUN apt-get -y install apt-utils sudo
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 RUN sudo apt-get install git-lfs
 
-# Select SMART Mixture
-# CMD ["./get_SMART_mixture.sh"]
-
-# Trigger the training
-CMD ["./instruction_tuner.sh"]
 
