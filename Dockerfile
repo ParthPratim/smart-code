@@ -39,7 +39,8 @@ RUN pip install -U pip setuptools wheel
 #RUN rm -rf submodlib
 
 COPY ./instruction_tuner.py instruction_tuner.py
-COPY t0_task_finetune.sh t0_task_finetune.sh
+COPY ./t0_task_finetune.sh t0_task_finetune.sh
+COPY ./dataset.py dataset.py
 RUN chmod +x t0_task_finetune.sh
 
 COPY ./config.yaml config.yaml
