@@ -24,11 +24,11 @@ RUN pip install optimum
 RUN pip install dash
 RUN pip install ipykernel
 RUN pip install -U pip setuptools wheel
-RUN pip install -U 'spacy[cuda-autodetect]'
-RUN python -m spacy download en_core_web_sm
-RUN pip install fastapi
-RUN pip install pydantic
-RUN pip install uvicorn
+#RUN pip install -U 'spacy[cuda-autodetect]'
+#RUN python -m spacy download en_core_web_sm
+#RUN pip install fastapi
+#RUN pip install pydantic
+#RUN pip install uvicorn
 
 #RUN git clone https://github.com/facebookresearch/faiss.git faiss_git && cd faiss_git && \
 #    cmake -B build . && \
@@ -45,7 +45,7 @@ RUN chmod +x t0_task_finetune.sh
 COPY ./config.yaml config.yaml
 
 RUN apt-get -y install apt-utils sudo
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-RUN sudo apt-get install git-lfs
+#RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+#RUN sudo apt-get install git-lfs
 
 
